@@ -1,0 +1,125 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>tw.idv.hunter.test</groupId>
+	<artifactId>PubuMavenHibernatSpringMysqlJPA</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>PubuMavenHibernatSpringMysqlJPA Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<c3p0.version>0.9.5.2</c3p0.version>
+		<hibernate.version>5.4.2.Final</hibernate.version>
+		<java.version>1.8</java.version>
+		<junit.version>4.12</junit.version>
+		<log4j.version>1.2.17</log4j.version>
+		<mysql.version>8.0.13</mysql.version>
+		<servlet.version>3.1.0</servlet.version>
+		<servlet.jsp.version>2.3.1</servlet.jsp.version>
+		<servlet.jsp.jstl.version>1.2.1</servlet.jsp.jstl.version>
+		<spring.version>5.1.4.RELEASE</spring.version>
+		<spring.data.jpa.version>2.1.2.RELEASE</spring.data.jpa.version>
+	</properties>
+
+	<dependencies>
+		<!-- JSP/Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${servlet.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp.jstl</groupId>
+			<artifactId>javax.servlet.jsp.jstl-api</artifactId>
+			<version>${servlet.jsp.jstl.version}</version>
+		</dependency>
+
+		<!-- MySQL -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.version}</version>
+		</dependency>
+
+		<!-- c3p0 -->
+		<dependency>
+			<groupId>com.mchange</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>${c3p0.version}</version>
+		</dependency>
+		<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.25</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.javassist</groupId>
+			<artifactId>javassist</artifactId>
+			<version>3.25.0-GA</version>
+		</dependency>
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- Junit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<finalName>PubuMavenHibernatSpringMysqlJPA</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version><!-- Servlet 3.1 -->
+				<configuration>
+					<source>${java.version}</source><!-- source compile Java version -->
+					<target>${java.version}</target><!-- target compile Java version -->
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
